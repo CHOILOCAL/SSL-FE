@@ -28,7 +28,7 @@
 
 3. Git
 
-3-1. 터미널 접속 후 'git remove -v'명령어를 통해 해당 연결된 원격 저장소 확인
+3-1. 터미널 접속 후 'git remote -v'명령어를 통해 해당 연결된 원격 저장소 확인
 3-2. 연결된 원격 저장소가 없을시 'git remote add origin 빗버킷_레포지토리_URL'
 3-3. 'git branch -a' 명령어를 통해 현재 브랜치 확인
   ( * develop
