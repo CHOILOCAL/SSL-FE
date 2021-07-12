@@ -52,8 +52,8 @@ const NavItem = () => {
       </StyledTreeItem>
       <br />
       <StyledTreeItem nodeId="6" label="Depth 1">
-          <StyledTreeItem nodeId="7" label="Depth 2"><RouterLink to="/app/v1/settings">
-            <StyledTreeItem nodeId="8" label="Depth 3" /></RouterLink>
+          <StyledTreeItem nodeId="7" label="Depth 2">
+            <RouterLink to="/app/v1/settings"><StyledTreeItem nodeId="8" label="Depth 3" /></RouterLink>
         </StyledTreeItem>
       </StyledTreeItem>
     </>
