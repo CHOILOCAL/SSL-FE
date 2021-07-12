@@ -28,7 +28,6 @@ const routes = [
       { path: '*', element: <Navigate to="/404" /> }
     ]
   },
-  // 게시판
   {
     path: URL,
     element: <DashboardLayout />,
@@ -46,7 +45,9 @@ const routes = [
     path: '/',
     element: <MainLayout />,
     children: [
+      { path: 'account', element: <AccountView /> },
       { path: 'login', element: <LoginView /> },
+      { path: 'logout', element: <LoginView /> },
       { path: 'signup', element: <RegisterView /> },
       { path: '404', element: <NotFoundView /> },
       { path: '/', element: <Navigate to={URL} /> },
