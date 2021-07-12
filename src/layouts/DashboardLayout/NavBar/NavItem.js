@@ -51,14 +51,11 @@ const NavItem = () => {
         <RouterLink to="/app/v1/dashboard"><StyledTreeItem nodeId="5" labelText="권한 관리" labelIcon={VerifiedUserIcon} /></RouterLink>
       </StyledTreeItem>
       <br />
-      <TreeItem nodeId="6" label="한진정보통신">
-        <TreeItem nodeId="7" label="전략사업부">
-          <TreeItem nodeId="8" label="사업지원팀">
-            <RouterLink to="/app/v1/settings"><TreeItem nodeId="9" label="거버넌스그룹" /></RouterLink>
-            <RouterLink to="/404"><TreeItem nodeId="10" label="프로젝트지원그룹" /></RouterLink>
-          </TreeItem>
-        </TreeItem>
-      </TreeItem>
+      <StyledTreeItem nodeId="6" label="Depth 1">
+          <StyledTreeItem nodeId="7" label="Depth 2"><RouterLink to="/app/v1/settings">
+            <StyledTreeItem nodeId="8" label="Depth 3" /></RouterLink>
+        </StyledTreeItem>
+      </StyledTreeItem>
     </>
   );
 };
