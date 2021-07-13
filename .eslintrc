@@ -1,0 +1,59 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "extends": ["airbnb", "airbnb/hooks", "eslint:recommended"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx"]
+      }
+    }
+  },
+  "rules": {
+    "linebreak-style": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-closing-tag-location": "off",
+    "react/jsx-indent": "off",
+    "react/jsx-closing-bracket-location": "off",
+    "react/jsx-indent-props": "off",
+    "object-curly-newline": "off",
+    "no-confusing-arrow": "off",
+    "object-property-newline": "off",
+    "no-restricted-globals": "off",
+    "react/jsx-max-props-per-line": "off",
+    "react/jsx-first-prop-new-line": "off",
+    "no-multi-assign": "off",
+    "no-undef": "off",
+    "max-len": "off",
+    "react/destructuring-assignment": "off",
+    "react/prop-types": "off",
+    "react-hooks/rules-of-hooks": "off",
+    "arrow-spacing": "off",
+    "object-curly-spacing": "off",
+    "key-spacing": "off",
+    "comma-spacing": "off",
+    "block-spacing": "off",
+    "no-unused-vars": "off",
+    "array-bracket-spacing": "off",
+    "no-underscore-dangle": "off",
+    "arrow-body-style": "off",
+    "comma-dangle": "off",
+    "import/no-unresolved": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/control-has-associated-label": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "no-console": "off",
+    "no-param-reassign": "off",
+    "no-plusplus": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "react/forbid-prop-types": "off",
+    "react/jsx-filename-extension": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/require-default-props": "off"
+  }
+}
