@@ -8,6 +8,7 @@ import {
   makeStyles, Hidden, Drawer, Box, Avatar, Typography, Divider
 } from '@material-ui/core';
 import Logo from 'src/components/Logo';
+import Account from 'src/components/Account';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
@@ -48,6 +49,9 @@ const useStyles = makeStyles(({
     cursor: 'pointer',
     width: 64,
     height: 64
+  },
+  buttonGrp: {
+    marginLeft: 'auto',
   }
 }));
 
@@ -120,6 +124,9 @@ const TopBar = ({ handleShowPanel, className, open, onMobileClose, openMobile, .
         </IconButton>
         <RouterLink to="/">
           <Logo />
+        </RouterLink>
+        <RouterLink to="/" className={classes.buttonGrp}>
+          <Account />
         </RouterLink>
       </Toolbar>
       </AppBar>

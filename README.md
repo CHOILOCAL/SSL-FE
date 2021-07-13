@@ -81,7 +81,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 | NodeJS       | v12.16.1                                                             |
 | NPM          | 6.13.4~                                                              |
 | YARN         | 1.22.4~                                                              |
-| bitbucekt    | https://bitbucket.hist.co.kr/projects/HX-SELHTUG/repos/ssl-fe/browse |
+| bitbucket    | https://bitbucket.hist.co.kr/projects/HX-SELHTUG/repos/ssl-fe/browse |
 ```
 
 ## 개발 환경 셋팅 (for Window)
@@ -100,7 +100,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 3. Git
 
-3-1. 터미널 접속 후 'git remove -v'명령어를 통해 해당 연결된 원격 저장소 확인
+3-1. 터미널 접속 후 'git remote -v'명령어를 통해 해당 연결된 원격 저장소 확인
 3-2. 연결된 원격 저장소가 없을시 'git remote add origin 빗버킷_레포지토리_URL'
 3-3. 'git branch -a' 명령어를 통해 현재 브랜치 확인
   ( * develop
@@ -125,7 +125,7 @@ VSC 한국어 설정 방법
 4. VS Code 재시작
  
 ```
-## 개발 환경 셋팅 (for Mac) 추가예
+## 개발 환경 셋팅 (for Mac) 추가 예정
 ```
 1. Node 다운로드
 
