@@ -8,53 +8,34 @@ import ListIcon from '@material-ui/icons/List';
 import BuildIcon from '@material-ui/icons/Build';
 import CodeIcon from '@material-ui/icons/Code';
 import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
+import BusinessIcon from '@material-ui/icons/Business';
+import GroupAddIcon from '@material-ui/icons/GroupAdd';
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import AssignmentIcon from '@material-ui/icons/Assignment';
 import { makeStyles } from '@material-ui/core/styles';
-// const items = [
-//   {
-//     highNodeId: '1',
-//     href: '/app/system',
-//     nodeId: '1',
-//     label: '시스템 관리',
-//   },
-//   {
-//     highNodeId: '1',
-//     href: '/app/system/code',
-//     nodeId: '2',
-//     label: '공통코드 관리'
-//   },
-//   {
-//     highNodeId: '1',
-//     href: '/app/system/menu',
-//     nodeId: '3',
-//     label: '메뉴 관리'
-//   },
-//   {
-//     highNodeId: '1',
-//     href: '/app/system/user',
-//     nodeId: '4',
-//     label: '사용자 관리'
-//   },
-//   {
-//     highNodeId: '1',
-//     href: '/app/system/auth',
-//     nodeId: '5',
-//     label: '권한 관리'
-//   },
-// ];
+
 const NavItem = () => {
   return (
     <>
-      <StyledTreeItem nodeId="1" labelText="시스템 관리" to="/signup" labelIcon={BuildIcon}>
-        <RouterLink to="/app/v1/list"><StyledTreeItem nodeId="2" labelText="공통코드 관리" labelIcon={CodeIcon} /></RouterLink>
-        <RouterLink to="/app/v1/products"><StyledTreeItem nodeId="3" labelText="메뉴 관리" labelIcon={ListIcon} /></RouterLink>
-        <RouterLink to="/app/v1/user"><StyledTreeItem nodeId="4" labelText="사용자 관리" labelIcon={AccountCircleIcon} /></RouterLink>
-        <RouterLink to="/app/v1/dashboard"><StyledTreeItem nodeId="5" labelText="권한 관리" labelIcon={VerifiedUserIcon} /></RouterLink>
+      <StyledTreeItem nodeId="1" labelText="시스템 관리" to="/signup">
+        <RouterLink to="/app/v1/list"><StyledTreeItem nodeId="2" labelText="공통코드 관리" /></RouterLink>
+        <RouterLink to="/app/v1/menu"><StyledTreeItem nodeId="3" labelText="메뉴 관리" /></RouterLink>
+        <RouterLink to="/app/v1/user"><StyledTreeItem nodeId="4" labelText="사용자 관리" /></RouterLink>
+        <RouterLink to="/app/v1/comp"><StyledTreeItem nodeId="5" labelText="회사 관리" /></RouterLink>
+        <RouterLink to="/app/v1/dept"><StyledTreeItem nodeId="6" labelText="부서 관리" /></RouterLink>
+        <RouterLink to="/app/v1/auth"><StyledTreeItem nodeId="7" labelText="권한 관리" /></RouterLink>
+      </StyledTreeItem>
+      <StyledTreeItem nodeId="9" labelText="게시판" to="/signup">
+        <RouterLink to="/app/v1/dashboard"><StyledTreeItem nodeId="10" labelText="대시보드 관리" /></RouterLink>
+        <RouterLink to="/app/v1/board"><StyledTreeItem nodeId="10" labelText="게시판 관리" /></RouterLink>
       </StyledTreeItem>
       <br />
       <StyledTreeItem nodeId="6" label="Depth 1">
           <StyledTreeItem nodeId="7" label="Depth 2">
-            <RouterLink to="/app/v1/settings"><StyledTreeItem nodeId="8" label="Depth 3" /></RouterLink>
-        </StyledTreeItem>
+            <RouterLink to="/app/v1/setting"><StyledTreeItem nodeId="8" label="SettingsView" /></RouterLink>
+            <RouterLink to="/app/v1/custom"><StyledTreeItem nodeId="9" label="CustomerListView" /></RouterLink>
+            <RouterLink to="/app/v1/product"><StyledTreeItem nodeId="10" label="ProductListView" /></RouterLink>
+          </StyledTreeItem>
       </StyledTreeItem>
     </>
   );
@@ -103,9 +84,6 @@ const useTreeItemStyles = makeStyles((theme) => ({
     alignItems: 'center',
     padding: theme.spacing(0.5, 0)
   },
-  labelIcon: {
-    marginRight: theme.spacing(1)
-  },
   labelText: {
     fontWeight: 'inherit',
     flexGrow: 1
@@ -122,7 +100,6 @@ function StyledTreeItem(props) {
     <TreeItem
       label={(
         <div className={classes.labelRoot}>
-          <LabelIcon className={classes.labelIcon} />
           <Typography variant="body2" className={classes.labelText}>
             {labelText}
           </Typography>
