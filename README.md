@@ -11,7 +11,7 @@
 | bitbucket    | https://bitbucket.hist.co.kr/projects/HX-SELHTUG/repos/ssl-fe/browse |
 ```
 
-## 개발 환경 셋팅 (for Window)
+## 개발 환경 셋팅 (for Window, Mac)
 ```
 1. Node.js / NPM 다운로드
  
@@ -55,16 +55,6 @@ VSC 한국어 설정 방법
 3. local.json 파일 내에서 local값을 'ko'로 설정
 4. VS Code 재시작
 ```
-
-## 개발 환경 셋팅 (for Mac) 추가 예정
-```
-1. Node 다운로드
-
-2. Npm 혹은 Yarn 다운로드
-
-3.
-```
-
 ## 참고 문서
 
 ### [바로가기](https://app.spaceli.io/space/1hosTH2bzRt1f3tW15dLnJXQIjn8DuPgl/page/1oQ1V-ywOFRAFhvg6yYd2my2avsnF8fSG)
