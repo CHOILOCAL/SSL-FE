@@ -5,6 +5,10 @@ import {
   makeStyles
 } from '@material-ui/core';
 import Page from 'src/components/Page';
+import { useParams } from 'react-router';
+import Content from './Content';
+import Comments from './Comments';
+import data from '../BoardListView/data';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -12,24 +16,28 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '100%',
     paddingBottom: theme.spacing(3),
     paddingTop: theme.spacing(3)
-  },
+  }
 }));
 
-const BoardView = () => {
+const SettingsView = () => {
   const classes = useStyles();
+
+  const { index } = useParams();
+  const article = data[index];
 
   return (
     <Page
       className={classes.root}
-      title="게시판 관리"
+      title="게시판 내용 보기"
     >
-      <Container maxWidth={false}>
+      <Container maxWidth="lg">
+        <Content data={article} />
         <Box mt={3}>
-          <h2>게시판 관리</h2>
+          <Comments />
         </Box>
       </Container>
     </Page>
   );
 };
 
-export default BoardView;
+export default SettingsView;

@@ -18,14 +18,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ListView = () => {
+const BoardListView = () => {
   const classes = useStyles();
   const [articles] = useState(data);
 
   return (
     <Page
       className={classes.root}
-      title="게시판 목록"
+      title="게시판 관리"
     >
       <Container maxWidth={false}>
         <Toolbar />
@@ -37,4 +37,4 @@ const ListView = () => {
   );
 };
 
-export default ListView;
+export default BoardListView;
