@@ -83,7 +83,7 @@ const RegisterView = () => {
                     gutterBottom
                     variant="body2"
                   >
-                    Use your email to create new account
+                    아래 항목을 입력해주세요.
                   </Typography>
                 </Box>
                 <TextField
@@ -177,21 +177,21 @@ const RegisterView = () => {
                     type="submit"
                     variant="contained"
                   >
-                    Sign up now
+                    회원가입
                   </Button>
                 </Box>
                 <Typography
                   color="textSecondary"
                   variant="body1"
                 >
-                  Have an account?
+                  아이디 찾기
                   {' '}
                   <Link
                     component={RouterLink}
                     to="/login"
                     variant="h6"
                   >
-                    Sign in
+                    아이디 찾기
                   </Link>
                 </Typography>
               </form>

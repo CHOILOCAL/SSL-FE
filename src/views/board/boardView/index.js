@@ -1,5 +1,7 @@
 import React from 'react';
 import {
+  Box,
+  Container,
   makeStyles
 } from '@material-ui/core';
 import Page from 'src/components/Page';
@@ -10,20 +12,24 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '100%',
     paddingBottom: theme.spacing(3),
     paddingTop: theme.spacing(3)
-  }
+  },
 }));
 
-const Dashboard = () => {
+const BoardView = () => {
   const classes = useStyles();
 
   return (
     <Page
       className={classes.root}
-      title="auth"
+      title="게시판 관리"
     >
-      <h2>권한 관리</h2>
+      <Container maxWidth={false}>
+        <Box mt={3}>
+          <h2>게시판 관리</h2>
+        </Box>
+      </Container>
     </Page>
   );
 };
 
-export default Dashboard;
+export default BoardView;

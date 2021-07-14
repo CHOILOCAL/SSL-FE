@@ -3,25 +3,19 @@ import PropTypes from 'prop-types';
 import TreeItem from '@material-ui/lab/TreeItem';
 import { Link as RouterLink } from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import ListIcon from '@material-ui/icons/List';
-import BuildIcon from '@material-ui/icons/Build';
-import CodeIcon from '@material-ui/icons/Code';
-import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
-import BusinessIcon from '@material-ui/icons/Business';
-import GroupAddIcon from '@material-ui/icons/GroupAdd';
-import DashboardIcon from '@material-ui/icons/Dashboard';
-import AssignmentIcon from '@material-ui/icons/Assignment';
 import { makeStyles } from '@material-ui/core/styles';
+import { URL } from 'src/utils/constants';
 
 const NavItem = () => {
+  const URL_PATH = URL;
+
   return (
     <>
       <StyledTreeItem nodeId="1" labelText="시스템 관리" to="/signup">
-        <RouterLink to="/app/v1/list"><StyledTreeItem nodeId="2" labelText="공통코드 관리" /></RouterLink>
+        <RouterLink to="/app/v1/code"><StyledTreeItem nodeId="2" labelText="공통코드 관리" /></RouterLink>
         <RouterLink to="/app/v1/menu"><StyledTreeItem nodeId="3" labelText="메뉴 관리" /></RouterLink>
         <RouterLink to="/app/v1/user"><StyledTreeItem nodeId="4" labelText="사용자 관리" /></RouterLink>
-        <RouterLink to="/app/v1/comp"><StyledTreeItem nodeId="5" labelText="회사 관리" /></RouterLink>
+        <RouterLink to="/app/v1/company"><StyledTreeItem nodeId="5" labelText="회사 관리" /></RouterLink>
         <RouterLink to="/app/v1/dept"><StyledTreeItem nodeId="6" labelText="부서 관리" /></RouterLink>
         <RouterLink to="/app/v1/auth"><StyledTreeItem nodeId="7" labelText="권한 관리" /></RouterLink>
       </StyledTreeItem>
@@ -32,9 +26,7 @@ const NavItem = () => {
       <br />
       <StyledTreeItem nodeId="6" label="Depth 1">
           <StyledTreeItem nodeId="7" label="Depth 2">
-            <RouterLink to="/app/v1/setting"><StyledTreeItem nodeId="8" label="SettingsView" /></RouterLink>
-            <RouterLink to="/app/v1/custom"><StyledTreeItem nodeId="9" label="CustomerListView" /></RouterLink>
-            <RouterLink to="/app/v1/product"><StyledTreeItem nodeId="10" label="ProductListView" /></RouterLink>
+            <RouterLink to="/app/v1/example"><StyledTreeItem nodeId="8" labelText="EXAMPLE" /></RouterLink>
           </StyledTreeItem>
       </StyledTreeItem>
     </>

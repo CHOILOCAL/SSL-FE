@@ -1,5 +1,7 @@
 import React from 'react';
 import {
+  Box,
+  Container,
   makeStyles
 } from '@material-ui/core';
 import Page from 'src/components/Page';
@@ -11,19 +13,23 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(3),
     paddingTop: theme.spacing(3)
   },
-  productCard: {
-    height: '100%'
-  }
 }));
 
-const ProductList = () => {
+const DeptView = () => {
   const classes = useStyles();
 
   return (
-    <Page className={classes.root} title="Products">
-      <h2>메뉴관리</h2>
+    <Page
+      className={classes.root}
+      title="부서 관리"
+    >
+      <Container maxWidth={false}>
+        <Box mt={3}>
+          <h2>부서 관리</h2>
+        </Box>
+      </Container>
     </Page>
   );
 };
 
-export default ProductList;
+export default DeptView;

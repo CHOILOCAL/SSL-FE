@@ -1,13 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Box,
   Container,
   makeStyles
 } from '@material-ui/core';
 import Page from 'src/components/Page';
-import Results from './Results';
-import Toolbar from './Toolbar';
-import data from './data';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,23 +15,21 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const BbsListView = () => {
+const DashboardView = () => {
   const classes = useStyles();
-  const [articles] = useState(data);
 
   return (
     <Page
       className={classes.root}
-      title="게시판 목록"
+      title="대시보드 관리"
     >
       <Container maxWidth={false}>
-        <Toolbar />
         <Box mt={3}>
-          <Results articles={articles} />
+          <h2>대시보드 관리</h2>
         </Box>
       </Container>
     </Page>
   );
 };
 
-export default BbsListView;
+export default DashboardView;

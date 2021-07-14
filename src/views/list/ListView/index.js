@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Container,
   makeStyles
 } from '@material-ui/core';
 import Page from 'src/components/Page';
-import { useParams } from 'react-router';
-import Content from './Content';
-import Comments from './Comments';
-import data from '../BbsListView/data';
+import Results from './Results';
+import Toolbar from './Toolbar';
+import data from './data';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,28 +15,26 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '100%',
     paddingBottom: theme.spacing(3),
     paddingTop: theme.spacing(3)
-  }
+  },
 }));
 
-const SettingsView = () => {
+const ListView = () => {
   const classes = useStyles();
-
-  const { index } = useParams();
-  const article = data[index];
+  const [articles] = useState(data);
 
   return (
     <Page
       className={classes.root}
-      title="게시판 내용 보기"
+      title="게시판 목록"
     >
-      <Container maxWidth="lg">
-        <Content data={article} />
+      <Container maxWidth={false}>
+        <Toolbar />
         <Box mt={3}>
-          <Comments />
+          <Results articles={articles} />
         </Box>
       </Container>
     </Page>
   );
 };
 
-export default SettingsView;
+export default ListView;
