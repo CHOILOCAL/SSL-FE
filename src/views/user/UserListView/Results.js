@@ -133,27 +133,27 @@ const Results = ({ className, customers, ...rest }) => {
                         className={classes.avatar}
                         src={customer.avatarUrl}
                       >
-                        {getInitials(customer.name)}
+                        {getInitials(customer.user_name)}
                       </Avatar>
                       <Typography
                         color="textPrimary"
                         variant="body1"
                       >
-                        {customer.name}
+                        {customer.user_name}
                       </Typography>
                     </Box>
                   </TableCell>
                   <TableCell>
-                    {customer.email}
+                    {customer.email_address}
                   </TableCell>
                   <TableCell>
-                    {`${customer.comm.company} > ${customer.comm.department} > ${customer.comm.group} > ${customer.comm.jobTitle}`}
+                    {`${customer.company_name} > ${customer.department_name}`}
                   </TableCell>
                   <TableCell>
-                    {customer.phone}
+                    {customer.mobile_phone_no}
                   </TableCell>
                   <TableCell>
-                    {moment(customer.createdAt).format('DD/MM/YYYY')}
+                    {customer.register_datetime}
                   </TableCell>
                 </TableRow>
               ))}

@@ -12,21 +12,21 @@ const NavItem = () => {
   return (
     <>
       <StyledTreeItem nodeId="1" labelText="시스템 관리" to="/signup">
-        <RouterLink to="/app/v1/code"><StyledTreeItem nodeId="2" labelText="공통코드 관리" /></RouterLink>
-        <RouterLink to="/app/v1/menu"><StyledTreeItem nodeId="3" labelText="메뉴 관리" /></RouterLink>
-        <RouterLink to="/app/v1/user"><StyledTreeItem nodeId="4" labelText="사용자 관리" /></RouterLink>
-        <RouterLink to="/app/v1/company"><StyledTreeItem nodeId="5" labelText="회사 관리" /></RouterLink>
-        <RouterLink to="/app/v1/dept"><StyledTreeItem nodeId="6" labelText="부서 관리" /></RouterLink>
-        <RouterLink to="/app/v1/auth"><StyledTreeItem nodeId="7" labelText="권한 관리" /></RouterLink>
+        <RouterLink to="/app/code"><StyledTreeItem nodeId="2" labelText="공통코드 관리" /></RouterLink>
+        <RouterLink to="/app/menu"><StyledTreeItem nodeId="3" labelText="메뉴 관리" /></RouterLink>
+        <RouterLink to="/app/user"><StyledTreeItem nodeId="4" labelText="사용자 관리(API Example)" /></RouterLink>
+        <RouterLink to="/app/company"><StyledTreeItem nodeId="5" labelText="회사 관리" /></RouterLink>
+        <RouterLink to="/app/dept"><StyledTreeItem nodeId="6" labelText="부서 관리" /></RouterLink>
+        <RouterLink to="/app/auth"><StyledTreeItem nodeId="7" labelText="권한 관리" /></RouterLink>
       </StyledTreeItem>
       <StyledTreeItem nodeId="9" labelText="게시판" to="/signup">
-        <RouterLink to="/app/v1/dashboard"><StyledTreeItem nodeId="10" labelText="대시보드 관리" /></RouterLink>
-        <RouterLink to="/app/v1/board"><StyledTreeItem nodeId="10" labelText="게시판 관리" /></RouterLink>
+        <RouterLink to="/app/dashboard"><StyledTreeItem nodeId="10" labelText="대시보드 관리" /></RouterLink>
+        <RouterLink to="/app/board"><StyledTreeItem nodeId="10" labelText="게시판 관리" /></RouterLink>
       </StyledTreeItem>
       <br />
       <StyledTreeItem nodeId="6" label="Depth 1">
           <StyledTreeItem nodeId="7" label="Depth 2">
-            <RouterLink to="/app/v1/example"><StyledTreeItem nodeId="8" labelText="EXAMPLE" /></RouterLink>
+            <RouterLink to="/app/example"><StyledTreeItem nodeId="8" labelText="EXAMPLE" /></RouterLink>
           </StyledTreeItem>
       </StyledTreeItem>
     </>

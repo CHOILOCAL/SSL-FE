@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import {
   Box,
   Container,
@@ -7,7 +8,7 @@ import {
 import Page from 'src/components/Page';
 import Results from './Results';
 import Toolbar from './Toolbar';
-import data from './data';
+import {URL} from '../../../utils/constants';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,7 +21,23 @@ const useStyles = makeStyles((theme) => ({
 
 const CustomerListView = () => {
   const classes = useStyles();
-  const [customers] = useState(data);
+  const [user, setUser] = useState([]);
+
+  axios({
+    method: 'GET',
+    url: 'sample/user/list',
+  })
+    .then(function (response) {
+      // 성공
+      setUser(response.data.response.page);
+    })
+    .catch(function (error) {
+      // 실패
+      console.log(`error`);
+    })
+    .then(function () {
+      // ...default
+    });
 
   return (
     <Page
@@ -30,7 +47,7 @@ const CustomerListView = () => {
       <Container maxWidth={false}>
         <Toolbar />
         <Box mt={3}>
-          <Results customers={customers} />
+          <Results customers={user} />
         </Box>
       </Container>
     </Page>

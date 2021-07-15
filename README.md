@@ -135,7 +135,6 @@ layout > view > component의 구조를 따르고 있다
 │       │   └── UserListView
 │       │       ├── Results.js
 │       │       ├── Toolbar.js
-│       │       ├── data.js
 │       │       └── index.js
 │       ├── dashboard // 대시보드 관리
 │       │   └── dashboardView
@@ -159,7 +158,6 @@ layout > view > component의 구조를 따르고 있다
 │       │   └── BoardListView // 게시글 리스트
 │       │       ├── Results.js
 │       │       ├── Toolbar.js
-│       │       ├── data.js
 │       │       └── index.js
 │       ├── menu // 메뉴 관리
 │       │   └── MenuView

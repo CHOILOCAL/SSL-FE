@@ -14,6 +14,11 @@
     }
   },
   "rules": {
+    "func-names": "off",
+    "prefer-arrow-callback": "off",
+    "prefer-template": "off",
+    "object-shorthand": "off",
+    "quotes": "off",
     "linebreak-style": "off",
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-closing-tag-location": "off",

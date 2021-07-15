@@ -6,9 +6,7 @@ import {
 } from '@material-ui/core';
 import Page from 'src/components/Page';
 import { useParams } from 'react-router';
-import Content from './Content';
 import Comments from './Comments';
-import data from '../BoardListView/data';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,9 +19,8 @@ const useStyles = makeStyles((theme) => ({
 
 const SettingsView = () => {
   const classes = useStyles();
-
   const { index } = useParams();
-  const article = data[index];
+  // const article = data[index];
 
   return (
     <Page
@@ -31,7 +28,6 @@ const SettingsView = () => {
       title="게시판 내용 보기"
     >
       <Container maxWidth="lg">
-        <Content data={article} />
         <Box mt={3}>
           <Comments />
         </Box>
