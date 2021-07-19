@@ -3,48 +3,11 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { Outlet } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core';
-import TopBar from '../MobileLayout/TopBar';
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    backgroundColor: theme.palette.background.dark,
-    display: 'flex',
-    height: '100%',
-    overflow: 'hidden',
-    width: '100%'
-  },
-  wrapperOpen: {
-    display: 'flex',
-    flex: '1 1 auto',
-    overflow: 'hidden',
-    paddingTop: 64,
-    [theme.breakpoints.up('lg')]: {
-      paddingLeft: 256
-    }
-  },
-  wrapperClose: {
-    display: 'flex',
-    flex: '1 1 auto',
-    overflow: 'hidden',
-    paddingTop: 64,
-    [theme.breakpoints.up('lg')]: {
-      paddingLeft: 0
-    }
-  },
-  contentContainer: {
-    display: 'flex',
-    flex: '1 1 auto',
-    overflow: 'hidden'
-  },
-  content: {
-    flex: '1 1 auto',
-    height: '100%',
-    overflow: 'auto'
-  }
-}));
+import { desktopLayoutStyles } from 'src/assets/styles/GlobalStyles';
+import TopBar from './TopBar';
 
 const DesktopLayout = () => {
-  const classes = useStyles();
+  const classes = desktopLayoutStyles();
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
 
   const [open, setOpen] = useState(false);

@@ -1,108 +1,84 @@
-import React, { useState } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import {
   AppBar,
-  Badge,
-  Box,
-  Hidden,
-  IconButton,
   Toolbar,
-  makeStyles
+  makeStyles,
+  Hidden,
+  Drawer,
+  Box,
+  Avatar,
+  Typography,
+  Divider
 } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import NotificationsIcon from '@material-ui/icons/NotificationsOutlined';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import InputIcon from '@material-ui/icons/Input';
-
 import Logo from 'src/components/Logo';
+import MenuIcon from '@material-ui/icons/Menu';
+import IconButton from '@material-ui/core/IconButton';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import TreeView from '@material-ui/lab/TreeView';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import { desktopLayoutTopbar } from 'src/assets/styles/GlobalStyles';
+import AccountBtn from 'src/components/AccountBtn';
+import NavItem from './NavBar/NavItem';
+import NavBar from './NavBar';
 
-const useStyles = makeStyles(() => ({
-  root: {
-    opacity: 0.8,
-  },
-  avatar: {
-    width: 60,
-    height: 60
-  },
-  menuButton: {
-    marginRight: 36,
-  },
-  iconMenuBtn: {
-    marginRight: 10,
-  },
-  toobarOpen: {
-    width: '83%',
-  },
-  toobarClose: {
-    width: '100%',
-  }
-}));
+const user = {
+  avatar: '',
+  company: '한진정보통신',
+  departmentGroup: '사업지원팀 > 거버넌스그룹',
+  name: '최현지'
+};
 
-function TopBar(props, className, rest, onMobileNavOpen) {
-  const classes = useStyles();
-  const [notifications] = useState([]);
+const TopBar = ({
+  handleShowPanel,
+  className,
+  open,
+  onMobileClose,
+  openMobile,
+  ...rest
+}) => {
+  const classes = desktopLayoutTopbar();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (openMobile && onMobileClose) {
+      onMobileClose();
+    }
+  }, [location.pathname]);
 
   return (
-    <AppBar
-      className={clsx(classes.root, className, {
-        [classes.toobarOpen]: props.open,
-        [classes.toobarClose]: !props,open,
-      })}
-      elevation={0}
-      {...rest}
-    >
-      <Toolbar className={clsx(classes.toobar, className)}>
-        <IconButton onClick={props.handleShowPanel} className={clsx(classes.iconMenuBtn)}>
-          {props.open === true ? (
-            <MenuIcon />
-          ) : (
-            <ChevronLeftIcon />
-          )}
-        </IconButton>
-        <RouterLink to="/">
-          <Logo />
-        </RouterLink>
-        <Box flexGrow={1} />
-        <RouterLink to="/signup" variant="h6">
-          <Hidden mdDown>
-            <IconButton>
-              <FavoriteIcon />
-            </IconButton>
-          </Hidden>
-        </RouterLink>
-        <Hidden mdDown>
-          <IconButton color="inherit">
-            <Badge
-              badgeContent={notifications.length}
-              color="primary"
-              variant="dot"
-            >
-              <NotificationsIcon />
-            </Badge>
+    <>
+      <AppBar
+        className={clsx(classes.root, className, {
+          [classes.drawerOpen]: open,
+          [classes.drawerClose]: !open
+        })}
+        elevation={0}
+        {...rest}
+      >
+        <Toolbar className={clsx(classes.toolbar, {})}>
+          <IconButton onClick={handleShowPanel} className={classes.icon}>
+            {open === true ? <ChevronLeftIcon /> : <MenuIcon />}
           </IconButton>
-          <IconButton color="inherit">
-            <InputIcon />
-          </IconButton>
-        </Hidden>
-        <Hidden lgUp>
-          <IconButton
-            color="inherit"
-            onClick={onMobileNavOpen}
-          >
-            <MenuIcon />
-          </IconButton>
-        </Hidden>
-      </Toolbar>
-    </AppBar>
+          <RouterLink to="/">
+            <Logo />
+          </RouterLink>
+          <RouterLink to="/" className={classes.buttonGrp}>
+            <AccountBtn />
+          </RouterLink>
+        </Toolbar>
+      </AppBar>
+      {/* Navbar */}
+      <NavBar open={open} />
+    </>
   );
-}
+};
 
 TopBar.propTypes = {
-  className: PropTypes.string,
-  onMobileNavOpen: PropTypes.func
+  className: PropTypes.string
 };
 
 export default TopBar;

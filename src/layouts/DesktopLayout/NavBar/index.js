@@ -16,45 +16,18 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import TreeView from '@material-ui/lab/TreeView';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
+import { desktopLayoutNavBar } from 'src/assets/styles/GlobalStyles';
 import NavItem from './NavItem';
 
 const user = {
   avatar: '',
-  company: '한진',
+  company: '한진정보통신',
   departmentGroup: '사업지원팀 > 거버넌스그룹',
   name: '최현지'
 };
 
-const useStyles = makeStyles(() => ({
-  mobileDrawer: {
-    width: 256
-  },
-  desktopDrawerOpen: {
-    width: 256,
-    // top: 64,
-    height: 'calc(100%)'
-    // height: 'calc(100% - 64px)'
-  },
-  desktopDrawerClose: {
-    width: 0,
-    heigth: 'calc(100%)'
-  },
-  avatar: {
-    cursor: 'pointer',
-    width: 64,
-    height: 64
-  }
-}));
-
-const NavBar = ({onMobileClose, openMobile }) => {
-  const classes = useStyles();
-  const location = useLocation();
-
-  useEffect(() => {
-    if (openMobile && onMobileClose) {
-      onMobileClose();
-    }
-  }, [location.pathname]);
+const NavBar = ({ open }) => {
+  const classes = desktopLayoutNavBar();
 
   const content = (
     <>
@@ -81,10 +54,6 @@ const NavBar = ({onMobileClose, openMobile }) => {
           <TreeView
             defaultCollapseIcon={<ExpandMoreIcon />}
             defaultExpandIcon={<ChevronRightIcon />}
-            // expanded={props.expanded}
-            // selected={props.selected}
-            // onNodeToggle={props.handleToggle}
-            // onNodeSelect={props.handleSelect}
           >
             <NavItem />
           </TreeView>
@@ -95,39 +64,22 @@ const NavBar = ({onMobileClose, openMobile }) => {
 
   return (
     <>
-      <Hidden lgUp>
-        <Drawer
-          anchor="left"
-          classes={{ paper: classes.mobileDrawer }}
-          onClose={onMobileClose}
-          open={openMobile}
-          variant="temporary"
-        >
-          {content}
-        </Drawer>
-      </Hidden>
-      <Hidden mdDown>
-        <Drawer
-          anchor="left"
-          classes={{ paper: classes.desktopDrawerClose }}
-          open={open}
-          variant="persistent"
-        >
-          {content}
-        </Drawer>
-      </Hidden>
+      <Drawer
+        anchor="left"
+        classes={{ paper: classes.desktopDrawerClose }}
+        open={open}
+        variant="persistent"
+      >
+        {content}
+      </Drawer>
     </>
   );
 };
 
-// NavBar.propTypes = {
-//   onMobileClose: PropTypes.func,
-//   openMobile: PropTypes.bool
-// };
-//
-// NavBar.defaultProps = {
-//   onMobileClose: () => {},
-//   openMobile: false
-// };
+NavBar.propTypes = {};
+
+NavBar.defaultProps = {
+  className: PropTypes.string
+};
 
 export default NavBar;

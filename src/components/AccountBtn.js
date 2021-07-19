@@ -7,10 +7,10 @@ import Button from '@material-ui/core/Button';
 const useAccountStyles = makeStyles({
   button: {
     marginRight: 3
-  },
+  }
 });
 
-const Account = (props) => {
+const AccountBtn = props => {
   const classes = useAccountStyles();
 
   const login = () => {
@@ -24,12 +24,46 @@ const Account = (props) => {
       justifyContent="flex-start"
       alignItems="center"
     >
-      <RouterLink to="/account"><Button variant="outlined" className={classes.button} startIcon={<AccountCircleIcon />}>내 프로필</Button></RouterLink>
-      <RouterLink to="/logout"><Button onClick={login} variant="outlined" className={classes.button} startIcon={<AccountCircleIcon />}>로그아웃</Button></RouterLink>
-      <RouterLink to="/login"><Button onClick={login} variant="outlined" className={classes.button} startIcon={<AccountCircleIcon />}>로그인</Button></RouterLink>
-      <RouterLink to="/signup"><Button variant="outlined" className={classes.button} startIcon={<AccountCircleIcon />}>회원가입</Button></RouterLink>
+      <RouterLink to="/account">
+        <Button
+          variant="outlined"
+          className={classes.button}
+          startIcon={<AccountCircleIcon />}
+        >
+          내 프로필
+        </Button>
+      </RouterLink>
+      <RouterLink to="/logout">
+        <Button
+          onClick={login}
+          variant="outlined"
+          className={classes.button}
+          startIcon={<AccountCircleIcon />}
+        >
+          로그아웃
+        </Button>
+      </RouterLink>
+      <RouterLink to="/login">
+        <Button
+          onClick={login}
+          variant="outlined"
+          className={classes.button}
+          startIcon={<AccountCircleIcon />}
+        >
+          로그인
+        </Button>
+      </RouterLink>
+      <RouterLink to="/signup">
+        <Button
+          variant="outlined"
+          className={classes.button}
+          startIcon={<AccountCircleIcon />}
+        >
+          회원가입
+        </Button>
+      </RouterLink>
     </Box>
   );
 };
 
-export default Account;
+export default AccountBtn;
