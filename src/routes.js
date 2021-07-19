@@ -2,19 +2,19 @@ import React from 'react';
 import { Navigate } from 'react-router-dom';
 import DashboardLayout from 'src/layouts/DashboardLayout';
 import AccountView from 'src/views/account/AccountView';
-import CustomerListView from 'src/views/user/UserListView';
+import userListView from 'src/views/user/userListView';
 import DashboardView from 'src/views/dashboard/dashboardView';
 import LoginView from 'src/views/auth/LoginView';
 import NotFoundView from 'src/views/errors/NotFoundView';
 import RegisterView from 'src/views/auth/RegisterView';
 import ExampleView from 'src/views/example/ExampleView';
 import CommCodeView from 'src/views/code/CommCodeView';
-import MenuView from 'src/views/menu/MenuView';
 import { URL } from 'src/utils/constants';
 import CompanyView from './views/company/CompanyView';
 import DeptView from './views/dept/deptView';
 import AuthView from './views/auth/AuthView';
 import BoardListView from './views/board/BoardListView';
+import MenuView from "./views/menu/menuView/menuView";
 
 const routes = [
   {
@@ -31,7 +31,7 @@ const routes = [
       // },
       { path: 'code', element: <CommCodeView /> },
       { path: 'menu', element: <MenuView />},
-      { path: 'user', element: <CustomerListView /> },
+      { path: 'user', element: <userListView /> },
       { path: 'company', element: <CompanyView /> },
       { path: 'dept', element: <DeptView /> },
       { path: 'auth', element: <AuthView /> },
