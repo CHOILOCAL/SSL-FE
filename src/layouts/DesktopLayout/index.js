@@ -43,7 +43,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const DashboardLayout = () => {
+const DesktopLayout = () => {
   const classes = useStyles();
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
 
@@ -83,12 +83,12 @@ const DashboardLayout = () => {
   );
 };
 
-export default DashboardLayout;
+export default DesktopLayout;
 
-DashboardLayout.defaultProps = {
+DesktopLayout.defaultProps = {
   open: false
 };
 
-DashboardLayout.propType = {
+DesktopLayout.propType = {
   open: PropTypes.bool
 };

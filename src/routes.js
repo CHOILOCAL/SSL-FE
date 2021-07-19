@@ -8,15 +8,15 @@ import NotFoundView from 'src/views/errors/NotFoundView';
 import ExampleView from 'src/views/example/ExampleView';
 import CommCodeView from 'src/views/code/CommCodeView';
 import { URL } from 'src/utils/constants';
-import CompanyView from './views/company/CompanyView';
+import CompanyView from './views/company/CompanyListView';
 import DeptView from './views/dept/DeptView';
 import AuthView from './views/auth/AuthView';
 import BoardListView from './views/board/BoardListView';
-import Index from "./views/menu/MenuListView";
-import {FindId} from "./views/account/FindId";
-import {FindPwd} from "./views/account/FindPwd";
-import LoginView from "./views/account/Login";
-import SignUpView from "./views/account/SignUp";
+import Index from './views/menu/MenuListView';
+import { FindId } from './views/account/FindId';
+import { FindPwd } from './views/account/FindPwd';
+import LoginView from './views/account/Login';
+import SignUpView from './views/account/SignUp';
 
 const routes = [
   {
@@ -32,7 +32,7 @@ const routes = [
       //   ]
       // },
       { path: 'code', element: <CommCodeView /> },
-      { path: 'menu', element: <Index />},
+      { path: 'menu', element: <Index /> },
       { path: 'user', element: <UserListView /> },
       { path: 'company', element: <CompanyView /> },
       { path: 'dept', element: <DeptView /> },
@@ -48,8 +48,8 @@ const routes = [
     element: <DashboardLayout />,
     children: [
       { path: 'account', element: <AccountView /> },
-      { path: 'findid', element:  <FindId />},
-      { path: 'findpwd', element:  <FindPwd />},
+      { path: 'findid', element: <FindId /> },
+      { path: 'findpwd', element: <FindPwd /> },
       { path: 'login', element: <LoginView /> },
       { path: 'logout', element: <Navigate to="/" /> },
       { path: 'signup', element: <SignUpView /> },
