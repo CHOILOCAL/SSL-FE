@@ -1,20 +1,22 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-import DashboardLayout from 'src/layouts/DashboardLayout';
+import DashboardLayout from 'src/layouts/DesktopLayout';
 import AccountView from 'src/views/account/AccountView';
-import userListView from 'src/views/user/userListView';
-import DashboardView from 'src/views/dashboard/dashboardView';
-import LoginView from 'src/views/auth/LoginView';
+import UserListView from 'src/views/user/UserListView';
+import DashboardView from 'src/views/dashboard/DashboardView';
 import NotFoundView from 'src/views/errors/NotFoundView';
-import RegisterView from 'src/views/auth/RegisterView';
 import ExampleView from 'src/views/example/ExampleView';
 import CommCodeView from 'src/views/code/CommCodeView';
 import { URL } from 'src/utils/constants';
 import CompanyView from './views/company/CompanyView';
-import DeptView from './views/dept/deptView';
+import DeptView from './views/dept/DeptView';
 import AuthView from './views/auth/AuthView';
 import BoardListView from './views/board/BoardListView';
-import MenuView from "./views/menu/menuView/menuView";
+import Index from "./views/menu/MenuListView";
+import {FindId} from "./views/account/FindId";
+import {FindPwd} from "./views/account/FindPwd";
+import LoginView from "./views/account/Login";
+import SignUpView from "./views/account/SignUp";
 
 const routes = [
   {
@@ -30,8 +32,8 @@ const routes = [
       //   ]
       // },
       { path: 'code', element: <CommCodeView /> },
-      { path: 'menu', element: <MenuView />},
-      { path: 'user', element: <userListView /> },
+      { path: 'menu', element: <Index />},
+      { path: 'user', element: <UserListView /> },
       { path: 'company', element: <CompanyView /> },
       { path: 'dept', element: <DeptView /> },
       { path: 'auth', element: <AuthView /> },
@@ -46,9 +48,11 @@ const routes = [
     element: <DashboardLayout />,
     children: [
       { path: 'account', element: <AccountView /> },
+      { path: 'findid', element:  <FindId />},
+      { path: 'findpwd', element:  <FindPwd />},
       { path: 'login', element: <LoginView /> },
-      { path: 'logout', element: <LoginView /> },
-      { path: 'signup', element: <RegisterView /> },
+      { path: 'logout', element: <Navigate to="/" /> },
+      { path: 'signup', element: <SignUpView /> },
       { path: '404', element: <NotFoundView /> },
       { path: '/', element: <Navigate to={URL} /> },
       { path: '*', element: <Navigate to="/404" /> }
