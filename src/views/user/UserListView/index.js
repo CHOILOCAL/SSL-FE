@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { Box, Container, makeStyles } from '@material-ui/core';
 import Page from 'src/components/Page';
 import Results from './Results';
 import Toolbar from './Toolbar';
-import { URL } from '../../../utils/constants';
 
 const useUserStyles = makeStyles(theme => ({
   root: {
@@ -15,25 +13,9 @@ const useUserStyles = makeStyles(theme => ({
   }
 }));
 
-const userListView = () => {
+const UserListView = () => {
   const classes = useUserStyles();
   const [user, setUser] = useState([]);
-
-  // axios({
-  //   method: 'GET',
-  //   url: 'system/users'
-  // })
-  //   .then(function(response) {
-  //     // 성공
-  //     setUser(response.data.response.page);
-  //   })
-  //   .catch(function(error) {
-  //     // 실패
-  //     console.log(`error`);
-  //   })
-  //   .then(function() {
-  //     // ...default
-  //   });
 
   return (
     <Page className={classes.root} title="사용자 관리">
@@ -47,4 +29,4 @@ const userListView = () => {
   );
 };
 
-export default userListView;
+export default UserListView;

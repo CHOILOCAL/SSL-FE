@@ -19,10 +19,10 @@ const NavItem = () => {
           <StyledTreeItem nodeId="3" labelText="메뉴 관리" />
         </RouterLink>
         <RouterLink to="/app/user">
-          <StyledTreeItem nodeId="4" labelText="사용자 관리(API Example)" />
+          <StyledTreeItem nodeId="4" labelText="사용자 관리" />
         </RouterLink>
         <RouterLink to="/app/company">
-          <StyledTreeItem nodeId="5" labelText="회사 관리" />
+          <StyledTreeItem nodeId="5" labelText="회사 관리(API Example)" />
         </RouterLink>
         <RouterLink to="/app/dept">
           <StyledTreeItem nodeId="6" labelText="부서 관리" />

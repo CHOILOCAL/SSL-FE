@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { Outlet } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core';
-import TopBar from '../MainLayout/TopBar';
+import TopBar from '../MobileLayout/TopBar';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: theme.palette.background.dark,
     display: 'flex',
@@ -39,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
     flex: '1 1 auto',
     height: '100%',
     overflow: 'auto'
-  },
+  }
 }));
 
 const DashboardLayout = () => {
@@ -59,11 +60,19 @@ const DashboardLayout = () => {
 
   return (
     <div className={classes.root}>
-      <TopBar open={open} handleShowPanel={handleShowPanel} setOpen={setOpen} onMobileNavOpen={() => setMobileNavOpen(true)} onMobileClose={() => setMobileNavOpen(false)} openMobile={isMobileNavOpen} />
-      <div className={clsx(classes.wrapperOpen, {
-        [classes.wrapperOpen]: open,
-        [classes.wrapperClose]: !open,
-      })}>
+      <TopBar
+        open={open}
+        handleShowPanel={handleShowPanel}
+        onMobileNavOpen={() => setMobileNavOpen(true)}
+        onMobileClose={() => setMobileNavOpen(false)}
+        openMobile={isMobileNavOpen}
+      />
+      <div
+        className={clsx(classes.wrapperOpen, {
+          [classes.wrapperOpen]: open,
+          [classes.wrapperClose]: !open
+        })}
+      >
         <div className={classes.contentContainer}>
           <div className={classes.content}>
             <Outlet />
@@ -75,3 +84,11 @@ const DashboardLayout = () => {
 };
 
 export default DashboardLayout;
+
+DashboardLayout.defaultProps = {
+  open: false
+};
+
+DashboardLayout.propType = {
+  open: PropTypes.bool
+};

@@ -95,7 +95,7 @@ layout > view > component의 구조를 따르고 있다
 │   │       ├── Facebook.js
 │   │       ├── Google.js
 │   ├── components // 컴포넌트
-│   │   ├── Account.js
+│   │   ├── AccountBtn.js
 │   │   ├── GlobalStyles.js
 │   │   ├── Logo.js
 │   │   └── Page.js

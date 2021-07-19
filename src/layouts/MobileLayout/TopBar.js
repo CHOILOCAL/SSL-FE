@@ -1,21 +1,27 @@
-import React, {useEffect, useState} from 'react';
-import {Link as RouterLink, useLocation} from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import {
   AppBar,
   Toolbar,
-  makeStyles, Hidden, Drawer, Box, Avatar, Typography, Divider
+  makeStyles,
+  Hidden,
+  Drawer,
+  Box,
+  Avatar,
+  Typography,
+  Divider
 } from '@material-ui/core';
 import Logo from 'src/components/Logo';
-import Account from 'src/components/Account';
+import Account from 'src/components/AccountBtn';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import TreeView from '@material-ui/lab/TreeView';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import NavItem from '../DashboardLayout/NavBar/NavItem';
+import NavItem from '../DesktopLayout/NavBar/NavItem';
 
 const user = {
   avatar: '',
@@ -24,7 +30,7 @@ const user = {
   name: '최현지'
 };
 
-const useStyles = makeStyles(({
+const useStyles = makeStyles({
   root: {},
   toolbar: {
     height: 64
@@ -51,11 +57,18 @@ const useStyles = makeStyles(({
     height: 64
   },
   buttonGrp: {
-    marginLeft: 'auto',
+    marginLeft: 'auto'
   }
-}));
+});
 
-const TopBar = ({ handleShowPanel, className, open, onMobileClose, openMobile, ...rest }) => {
+const TopBar = ({
+  handleShowPanel,
+  className,
+  open,
+  onMobileClose,
+  openMobile,
+  ...rest
+}) => {
   const classes = useStyles();
   const location = useLocation();
 
@@ -105,30 +118,24 @@ const TopBar = ({ handleShowPanel, className, open, onMobileClose, openMobile, .
   return (
     <>
       <AppBar
-      className={clsx(classes.root, className, {
-        [classes.drawerOpen]: open,
-        [classes.drawerClose]: !open,
-      })}
-      elevation={0}
-      {...rest}
-    >
-      <Toolbar className={clsx(classes.toolbar, {
-      })}
+        className={clsx(classes.root, className, {
+          [classes.drawerOpen]: open,
+          [classes.drawerClose]: !open
+        })}
+        elevation={0}
+        {...rest}
       >
-        <IconButton onClick={handleShowPanel} className={classes.icon}>
-          {open === true ? (
-            <ChevronLeftIcon />
-          ) : (
-            <MenuIcon />
-          )}
-        </IconButton>
-        <RouterLink to="/">
-          <Logo />
-        </RouterLink>
-        <RouterLink to="/" className={classes.buttonGrp}>
-          <Account />
-        </RouterLink>
-      </Toolbar>
+        <Toolbar className={clsx(classes.toolbar, {})}>
+          <IconButton onClick={handleShowPanel} className={classes.icon}>
+            {open === true ? <ChevronLeftIcon /> : <MenuIcon />}
+          </IconButton>
+          <RouterLink to="/">
+            <Logo />
+          </RouterLink>
+          <RouterLink to="/" className={classes.buttonGrp}>
+            <Account />
+          </RouterLink>
+        </Toolbar>
       </AppBar>
       <Hidden lgUp>
         <Drawer
@@ -151,7 +158,7 @@ const TopBar = ({ handleShowPanel, className, open, onMobileClose, openMobile, .
           {content}
         </Drawer>
       </Hidden>
-      </>
+    </>
   );
 };
 

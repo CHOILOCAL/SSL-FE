@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MenuView = () => {
+const Index = () => {
   const classes = useStyles();
 
   return (
@@ -32,4 +32,4 @@ const MenuView = () => {
   );
 };
 
-export default MenuView;
+export default Index;

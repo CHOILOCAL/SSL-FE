@@ -9,11 +9,16 @@ import {
   TextField,
   InputAdornment,
   SvgIcon,
-  makeStyles, Grid, FormControl, InputLabel, Select, MenuItem
+  makeStyles,
+  Grid,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem
 } from '@material-ui/core';
 import { Search as SearchIcon } from 'react-feather';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {},
   importButton: {
     marginRight: theme.spacing(1)
@@ -27,15 +32,16 @@ const Toolbar = ({ className, ...rest }) => {
   const classes = useStyles();
 
   return (
-    <div
-      className={clsx(classes.root, className)}
-      {...rest}
-    >
-      <Box
-        display="flex"
-        justifyContent="flex-end"
-      >
-        <Grid container spacing={1} display="flex" justifyContent="flex-start" direction="row" alignItems="center">
+    <div className={clsx(classes.root, className)} {...rest}>
+      <Box display="flex" justifyContent="flex-end">
+        <Grid
+          container
+          spacing={1}
+          display="flex"
+          justifyContent="flex-start"
+          direction="row"
+          alignItems="center"
+        >
           <Grid item xs={4} sm={2}>
             <FormControl fullWidth variant="outlined">
               <InputLabel id="bbs-search-criteria-label-02">회사</InputLabel>
@@ -73,7 +79,9 @@ const Toolbar = ({ className, ...rest }) => {
           </Grid>
           <Grid item xs={4} sm={2}>
             <FormControl fullWidth variant="outlined">
-              <InputLabel id="bbs-search-criteria-label-03">검색 키워드</InputLabel>
+              <InputLabel id="bbs-search-criteria-label-03">
+                검색 키워드
+              </InputLabel>
               <Select
                 labelId="bbs-search-criteria-label-03"
                 id="bbs-search-criteria-03"
@@ -94,10 +102,7 @@ const Toolbar = ({ className, ...rest }) => {
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
-                    <SvgIcon
-                      fontSize="small"
-                      color="action"
-                    >
+                    <SvgIcon fontSize="small" color="action">
                       <SearchIcon />
                     </SvgIcon>
                   </InputAdornment>

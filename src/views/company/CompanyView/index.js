@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import {
   Box,
   Container,
@@ -17,6 +18,22 @@ const useStyles = makeStyles((theme) => ({
 
 const CompanyView = () => {
   const classes = useStyles();
+
+  axios({
+    method: 'GET',
+    url: 'system/users'
+  })
+    .then(function(response) {
+      // 성공
+      setUser(response.data.response.page);
+    })
+    .catch(function(error) {
+      // 실패
+      console.log(`error`);
+    })
+    .then(function() {
+      // ...default
+    });
 
   return (
     <Page
