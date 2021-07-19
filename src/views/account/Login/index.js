@@ -9,31 +9,28 @@ import {
   Grid,
   Link,
   TextField,
-  Typography,
+  Typography
 } from '@material-ui/core';
 import GoogleIcon from 'src/assets/icons/Google';
 import Page from 'src/components/Page';
 import { URL } from 'src/utils/constants';
-import {useLoginStyles} from "src/assets/styles/componentsStyles";
-import axios from "axios";
+import { useLoginStyles } from 'src/assets/styles/ComponentsStyles';
+import axios from 'axios';
 
 const LoginView = () => {
   const classes = useLoginStyles();
   const navigate = useNavigate();
   const [users, setUsers] = useState({
     email: '',
-    password: '',
+    password: ''
   });
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     console.log(e.target.value);
   };
 
   return (
-    <Page
-      className={classes.root}
-      title="로그인"
-    >
+    <Page className={classes.root} title="로그인">
       <Box
         display="flex"
         flexDirection="column"
@@ -47,27 +44,29 @@ const LoginView = () => {
               password: '1234'
             }}
             validationSchema={Yup.object().shape({
-              email: Yup.string().email('이메일 형식을 입력해주세요. ').max(255).required('필수입력 사항입니다. '),
-              password: Yup.string().max(255).required('필수입력 사항입니다. ')
+              email: Yup.string()
+                .email('이메일 형식을 입력해주세요. ')
+                .max(255)
+                .required('필수입력 사항입니다. '),
+              password: Yup.string()
+                .max(255)
+                .required('필수입력 사항입니다. ')
             })}
             onSubmit={() => {
-              navigate(URL, { replace: true });
+              // navigate(URL, { replace: true });
             }}
           >
             {({
-                errors,
-                handleBlur,
-                handleSSOSubmit,
-                handleSubmit,
-                isSubmitting,
-                touched,
-              }) => (
+              errors,
+              handleBlur,
+              handleSSOSubmit,
+              handleSubmit,
+              isSubmitting,
+              touched
+            }) => (
               <form onSubmit={handleSSOSubmit}>
                 <Box mb={3}>
-                  <Typography
-                    color="textPrimary"
-                    variant="h2"
-                  >
+                  <Typography color="textPrimary" variant="h2">
                     로그인
                   </Typography>
                   <Typography
@@ -78,15 +77,8 @@ const LoginView = () => {
                     HIST 직원은 Hanway SSO를 이용해주세요.
                   </Typography>
                 </Box>
-                <Grid
-                  container
-                  spacing={3}
-                >
-                  <Grid
-                    item
-                    xs={12}
-                    md={12}
-                  >
+                <Grid container spacing={3}>
+                  <Grid item xs={12} md={12}>
                     <Button
                       fullWidth
                       startIcon={<GoogleIcon />}
@@ -128,7 +120,7 @@ const LoginView = () => {
                 />
                 <Box my={2}>
                   <Button
-                    onClick={login}
+                    onClick={handleSubmit}
                     color="primary"
                     disabled={isSubmitting}
                     fullWidth
@@ -144,7 +136,9 @@ const LoginView = () => {
                   component={RouterLink}
                   to="/findid"
                   variant="h6"
-                >아이디 찾기</Link>
+                >
+                  아이디 찾기
+                </Link>
                 <Link
                   className={classes.findpwdBtn}
                   color="textSecondary"
