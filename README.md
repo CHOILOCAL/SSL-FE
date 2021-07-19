@@ -66,107 +66,103 @@ VSC 한국어 설정 방법
 
 ```
 ※ 본 프로젝트는 PC용 layout, mobile용 layout을 따로 가지고 있으며,
-layout > view > component의 구조를 따르고 있다
+layout > view >= component의 구조를 따르고 있다.
+모든 layout, view, component는 'index.js'에서 다른 함수 컴포넌트를 불러오거나 그 자체로 사용된다.
 
-├── CHANGELOG.md
-├── LICENSE.md
 ├── README.md
-├── jsconfig.json // 자바스크립트 설정 파일
+├── jsconfig.json
 ├── package-lock.json
-├── package.json // 패키지 모듈 설정 파일
+├── package.json
 ├── public
 │   ├── _redirects
-│   ├── favicon.ico // 파비콘
-│   ├── index.html // root index 파일
+│   ├── favicon.ico
+│   ├── index.html
 │   ├── manifest.json
-│   └── static // 정적 파일 폴더
-│       └─── images // 이미지 파일 폴더
-│           ├── not_found.png // 404 에러시 노출되는 이미지
-│           ├── undraw_page_not_found_su7k.svg // 404 에러시 노출되는 이미지
-│           └── undraw_resume_folder_2_arse.svg // 404 에러시 노출되는 이미지
+│   └── static
+│       └── images
 ├── src
-│   ├── App.js // global js 파일
-│   ├── assets // 정적 resource 폴더 (icons, images, icons, css, ...)
-│   │   └── images
-│   │       ├── hanjin.jpg
-│   │       ├── hanjin2.png
-│   │       └── hist.png
-│   │   └── icons
-│   │       ├── Facebook.js
-│   │       ├── Google.js
-│   ├── components // 컴포넌트
-│   │   ├── AccountBtn.js
-│   │   ├── GlobalStyles.js
-│   │   ├── Logo.js
-│   │   └── Page.js
-│   ├── index.js // root js 파일
-│   ├── layouts
-│   │   ├── DashboardLayout // PC 버전 Layout
-│   │   │   ├── NavBar // 좌측 SideNavBar
+│   ├── App.js
+│   ├── assets
+│   │   ├── icons
+│   │   ├── images
+│   │   └── styles
+│   ├── components
+│   ├── index.js
+│   ├── layouts // URL 변경이 반영되지 않는 컴포넌트
+│   │   ├── DesktopLayout // Desktop 버전 Layout
+│   │   │   ├── NavBar
 │   │   │   │   ├── NavItem.js
 │   │   │   │   └── index.js
 │   │   │   ├── TopBar.js
-│   │   │   └── index.js
-│   │   └── MainLayout // 모바일 버전 Layout(~ing)
+│   │   │   └── index.js // DesktopLayout 컴포넌트를 구성하는 최상단
+│   │   └── MobileLayout // Mobile 버전 Layout
+│   │       ├── NavBar
+│   │       │   ├── NavItem.js
+│   │       │   └── index.js
 │   │       ├── TopBar.js
-│   │       └── index.js
-│   ├── routes.js // 라우터 경로
-│   ├── theme // global theme(theme lib)
-│   │   ├── index.js
-│   │   ├── shadows.js
-│   │   └── typography.js
-│   ├── utils
-│   │   ├── constants.js // 고정 변수 셋팅 (API root ... 등)
-│   │   └── getInitials.js // 정규식 모음
-│   └── views // 좌측 SideNavbar에 메뉴들이 가지고 있는 view
-│       ├── account // 내 프로필
-│       │   └── AccountView
-│       │       ├── Profile.js
-│       │       ├── ProfileDetails.js
+│   │       └── index.js // MobileLayout 컴포넌트를 구성하는 최상단
+│   ├── routes.js // 라우터, URL PATH 설정
+│   ├── setupProxy.js // API CORS proxy 설정
+│   ├── theme // 전역 CSS
+│   ├── utils // 유틸리티
+│   └── views // URL 변경 단위로 호출되는 컴포넌트
+│       ├── account // 계정
+│       │   ├── AccountView // 내 프로필
+│       │   │   ├── Profile.js
+│       │   │   ├── ProfileDetails.js
+│       │   │   └── index.js
+│       │   ├── FindId // 아이디 찾기
+│       │   │   └── index.js
+│       │   ├── FindPwd // 비밀번호 찾기
+│       │   │   └── index.js
+│       │   ├── Login // 로그인
+│       │   │   └── index.js
+│       │   └── SignUp // 회원가입
 │       │       └── index.js
 │       ├── auth // 권한 관리
-│       │   ├── AuthView
+│       │   └── AuthView
+│       │       └── index.js
+│       ├── board // 게시판
+│       │   ├── BoardListView // 게시판 리스트
+│       │   │   ├── Results.js
+│       │   │   ├── Toolbar.js
 │       │   │   └── index.js
-│       │   ├── LoginView.js
-│       │   └── RegisterView.js
+│       │   └── ContentView // 게시판 글 상세보기
+│       │       ├── Comments.js
+│       │       ├── Content.js
+│       │       └── index.js
 │       ├── code // 공통코드 관리
-│       │   └── CommCodeView
+│       │   └── CommCodeView // 공통코드 관리 리스트
 │       │       └── index.js
 │       ├── company // 회사 관리
-│       │   └── CompanyView
-│       │       └── index.js
-│       ├── user // 사용자 관리
-│       │   └── UserListView
+│       │   └── companyListDetailView // 회사 관리 리스트 상세보기
+│       │   └── CompanyListView // 회사 관리 리스트
 │       │       ├── Results.js
 │       │       ├── Toolbar.js
 │       │       └── index.js
-│       ├── dashboard // 대시보드 관리
-│       │   └── dashboardView
+│       ├── dashboard // 대시보드
+│       │   └── DashboardListView // 대시보드 리스트
 │       │       └── index.js
 │       ├── dept // 부서 관리
-│       │   └── deptView
+│       │   └── DeptView // 부서 관리 리스트
 │       │       └── index.js
-│       ├── errors // 에러
+│       ├── errors // 에러 페이지
 │       │   └── NotFoundView.js
-│       ├── example // 개발용 예제 views들 모음
+│       ├── example // 예제 페이지
 │       │   └── ExampleView
 │       │       ├── Cards.js
 │       │       ├── Notifications.js
 │       │       ├── Password.js
 │       │       └── index.js
-│       ├── board // 게시판 관리
-│       │   ├── ContentView // 게시글
-│       │   │   ├── Comments.js
-│       │   │   ├── Content.js
-│       │   │   └── index.js
-│       │   └── BoardListView // 게시글 리스트
-│       │       ├── Results.js
-│       │       ├── Toolbar.js
-│       │       └── index.js
 │       ├── menu // 메뉴 관리
-│       │   └── MenuView
+│       │   └── MenuListView // 메뉴 관리 리스트
 │       │       └── index.js
-└── yarn.lock
+│       └── user // 사용자 관리
+│           └── UserListView // 사용자 관리 리스트
+│               ├── Results.js
+│               ├── Toolbar.js
+│               └── index.js
+
 
 ```
 
