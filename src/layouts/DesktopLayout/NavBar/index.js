@@ -16,7 +16,7 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import TreeView from '@material-ui/lab/TreeView';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
-import { desktopLayoutNavBar } from 'src/assets/styles/GlobalStyles';
+import { desktopLayoutNavBar } from 'src/assets/styles/globalStyles';
 import NavItem from './NavItem';
 
 const user = {

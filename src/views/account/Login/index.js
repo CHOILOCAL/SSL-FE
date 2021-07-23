@@ -14,7 +14,7 @@ import {
 import GoogleIcon from 'src/assets/icons/Google';
 import Page from 'src/components/Page';
 import { URL } from 'src/utils/constants';
-import { useLoginStyles } from 'src/assets/styles/ComponentsStyles';
+import { useLoginStyles } from 'src/assets/styles/componentsStyles';
 import axios from 'axios';
 
 const LoginView = () => {

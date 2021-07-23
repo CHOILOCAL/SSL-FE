@@ -1,5 +1,6 @@
 import { createStyles, makeStyles } from '@material-ui/core';
 
+// global
 const useStyles = makeStyles(() =>
   createStyles({
     '@global': {
@@ -15,7 +16,7 @@ const useStyles = makeStyles(() =>
         width: '100%'
       },
       body: {
-        backgroundColor: '#f4f6f8',
+        backgroundColor: '#FFFFFF',
         height: '100%',
         width: '100%'
       },
@@ -41,11 +42,12 @@ export default GlobalStyles;
 // DesktopLayout > index
 export const desktopLayoutStyles = makeStyles(theme => ({
   root: {
-    backgroundColor: theme.palette.background.dark,
-    display: 'flex',
-    height: '100%',
-    overflow: 'hidden',
-    width: '100%'
+    // backgroundColor: theme.palette.background.dark,
+    // display: 'flex',
+    // height: '100%',
+    // overflow: 'hidden',
+    // minHeight: '100%',
+    // width: '100%'
   },
   wrapperOpen: {
     display: 'flex',

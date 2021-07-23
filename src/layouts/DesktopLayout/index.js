@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { Outlet } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core';
-import { desktopLayoutStyles } from 'src/assets/styles/GlobalStyles';
+import { desktopLayoutStyles } from 'src/assets/styles/globalStyles';
 import TopBar from './TopBar';
 
 const DesktopLayout = () => {

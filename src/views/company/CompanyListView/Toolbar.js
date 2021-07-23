@@ -17,7 +17,7 @@ import {
   MenuItem
 } from '@material-ui/core';
 import { Search as SearchIcon } from 'react-feather';
-import { useCompanyToolbarStyles } from 'src/assets/styles/SystemStyles';
+import { useCompanyToolbarStyles } from 'src/assets/styles/systemStyles';
 
 const Toolbar = ({ className, ...rest }) => {
   const classes = useCompanyToolbarStyles();

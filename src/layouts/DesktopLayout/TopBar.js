@@ -20,7 +20,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import TreeView from '@material-ui/lab/TreeView';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import { desktopLayoutTopbar } from 'src/assets/styles/GlobalStyles';
+import { desktopLayoutTopbar } from 'src/assets/styles/globalStyles';
 import AccountBtn from 'src/components/AccountBtn';
 import NavItem from './NavBar/NavItem';
 import NavBar from './NavBar';

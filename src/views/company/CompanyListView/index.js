@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Container } from '@material-ui/core';
-import { useCompanyStyles } from 'src/assets/styles/SystemStyles';
+import { useCompanyStyles } from 'src/assets/styles/systemStyles';
 import Page from 'src/components/Page';
 import Toolbar from 'src/views/company/CompanyListView/Toolbar';
 import axios from 'axios';

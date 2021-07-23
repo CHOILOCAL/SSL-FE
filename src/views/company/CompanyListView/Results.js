@@ -17,7 +17,7 @@ import {
   Typography,
   makeStyles
 } from '@material-ui/core';
-import { useCompanyResultsStyles } from 'src/assets/styles/SystemStyles';
+import { useCompanyResultsStyles } from 'src/assets/styles/systemStyles';
 
 const Results = ({ className, companys, ...rest }) => {
   const classes = useCompanyResultsStyles();
